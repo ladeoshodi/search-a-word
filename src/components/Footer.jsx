@@ -2,10 +2,11 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       Built by Lade with love ❤️, powered with{" "}
-      <a href="https://dictionaryapi.dev/" target="_blank"></a>Free Dictionary
-      API
+      <a href="https://dictionaryapi.dev/" target="_blank">
+        Free Dictionary API
+      </a>
     </div>
   );
 }
