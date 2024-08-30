@@ -42,13 +42,13 @@ function Search({ result, setResult }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <label htmlFor="search"></label>
       <input
         type="search"
         name="search"
         id="search"
-        placeholder="search for an english word..."
+        placeholder="Search for an english word..."
         onChange={handleChange}
         value={search}
       />
