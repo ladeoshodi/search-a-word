@@ -4,10 +4,11 @@ import { useState } from "react";
 function Search({ result, setResult }) {
   const [search, setSearch] = useState("");
 
-  function updateResult(status, message) {
+  function updateResult(status, message, isNewRequest = false) {
     const currentResult = structuredClone(result);
     currentResult.status = status;
     currentResult.message = message;
+    if (isNewRequest) currentResult.isNewRequest = true;
     setResult(currentResult);
   }
 
@@ -22,7 +23,7 @@ function Search({ result, setResult }) {
         };
       }
       const data = await response.json();
-      updateResult(response.status, data);
+      updateResult(response.status, data[0]);
     } catch (error) {
       updateResult(error.status, error.message);
     }
@@ -31,6 +32,7 @@ function Search({ result, setResult }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (search) {
+      updateResult(null, "", true);
       getDefinition(search);
     }
   }
