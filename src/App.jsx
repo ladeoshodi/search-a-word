@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Search from "./components/Search";
+import Results from "./components/Results";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -20,9 +21,7 @@ function App() {
     <>
       <h1>Search-A-Word!</h1>
       <Search />
-      <div className="result">
-        <p>Result will be populated here</p>
-      </div>
+      <Results />
       <Footer />
     </>
   );
