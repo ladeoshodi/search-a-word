@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <h1>Search-A-Word!</h1>
+      <h1 className="header-text">Search-A-Word!</h1>
       <Search result={result} setResult={setResult} />
       <div className="result-container">
         <Results result={result} />
