@@ -22,7 +22,7 @@ function Results({ result }) {
           </div>
           <audio ref={audioRef} src={result.message.phonetics[0].audio}></audio>
         </div>
-        <hr className="main-section-divider" />
+        <hr className="main-section-divider"></hr>
         <div className="result-body">
           {result.message.meanings.map((meaning, index) => {
             return (
@@ -50,6 +50,17 @@ function Results({ result }) {
                       <ol>
                         {meaning.synonyms.map((synonym, index) => {
                           return <li key={index}>{synonym}</li>;
+                        })}
+                      </ol>
+                    </>
+                  )}
+                  {!!meaning.antonyms.length && (
+                    <>
+                      {" "}
+                      <p>Antonyms</p>
+                      <ol>
+                        {meaning.antonyms.map((antonym, index) => {
+                          return <li key={index}>{antonym}</li>;
                         })}
                       </ol>
                     </>
