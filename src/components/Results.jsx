@@ -28,15 +28,17 @@ function Results({ result }) {
             return (
               <>
                 <div key={index} className="meanings-card">
-                  <p className="meanings-pos">{`Part of Speech: ${meaning.partOfSpeech}`}</p>
+                  <p className="meanings-pos">
+                    Part of Speech: {meaning.partOfSpeech}
+                  </p>
                   <ol>
                     {meaning.definitions.map((definition, index) => {
                       return (
                         <li key={index}>
-                          {`Definition: ${definition.definition}`}
+                          Definition: {definition.definition}
                           <ul>
                             {definition.example && (
-                              <li>{`Example: ${definition.example}`}</li>
+                              <li>Example: {definition.example}</li>
                             )}
                           </ul>
                         </li>
@@ -46,7 +48,7 @@ function Results({ result }) {
                   {!!meaning.synonyms.length && (
                     <>
                       {" "}
-                      <p>Synonyms</p>
+                      <p>Synonyms ({meaning.partOfSpeech})</p>
                       <ol>
                         {meaning.synonyms.map((synonym, index) => {
                           return <li key={index}>{synonym}</li>;
@@ -57,7 +59,7 @@ function Results({ result }) {
                   {!!meaning.antonyms.length && (
                     <>
                       {" "}
-                      <p>Antonyms</p>
+                      <p>Antonyms ({meaning.partOfSpeech})</p>
                       <ol>
                         {meaning.antonyms.map((antonym, index) => {
                           return <li key={index}>{antonym}</li>;
