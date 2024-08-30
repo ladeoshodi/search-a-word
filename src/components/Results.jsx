@@ -1,6 +1,6 @@
 import "./Results.css";
 
-function Results() {
+function Results({ result }) {
   return (
     <div className="result">
       <p>Result will be populated here</p>

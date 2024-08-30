@@ -1,22 +1,30 @@
 import "./Search.css";
 import { useState } from "react";
 
-function Search({ setWordDefinition, setErrorMessage }) {
+function Search({ result, setResult }) {
   const [search, setSearch] = useState("");
+
+  function updateResult(status, message) {
+    const currentResult = structuredClone(result);
+    currentResult.status = status;
+    currentResult.message = message;
+    setResult(currentResult);
+  }
 
   async function getDefinition(word) {
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
     try {
       const response = await fetch(url);
       if (!response.ok) {
-        throw new Error(`Whoops, "${word}" not found 😢`);
+        throw {
+          status: response.status,
+          message: `Whoops, "${word}" not found 😢`,
+        };
       }
       const data = await response.json();
-      setWordDefinition(data);
-      setErrorMessage(null);
+      updateResult(response.status, data);
     } catch (error) {
-      setErrorMessage(error.message);
-      setWordDefinition(null);
+      updateResult(error.status, error.message);
     }
   }
 

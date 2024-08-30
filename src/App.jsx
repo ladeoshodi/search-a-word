@@ -5,19 +5,18 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [wordDefinition, setWordDefinition] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [result, setResult] = useState({ status: null, message: "" });
 
-  console.log("successful response:", wordDefinition);
-  console.log("error message:", errorMessage);
+  console.log("response-status:", result.status);
+  console.log("response-message:", result.message);
+
   return (
     <>
       <h1>Search-A-Word!</h1>
-      <Search
-        setWordDefinition={setWordDefinition}
-        setErrorMessage={setErrorMessage}
-      />
-      <Results />
+      <Search result={result} setResult={setResult} />
+      <div className="result">
+        <Results result={result} />
+      </div>
       <Footer />
     </>
   );
