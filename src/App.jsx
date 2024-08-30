@@ -1,26 +1,22 @@
-import { useEffect } from "react";
 import Search from "./components/Search";
 import Results from "./components/Results";
 import Footer from "./components/Footer";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  async function getWord(word) {
-    const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    const response = await fetch(url);
-    const data = await response.json();
+  const [wordDefinition, setWordDefinition] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
-    console.log(data);
-  }
-
-  useEffect(() => {
-    // getWord("hello");
-  }, []);
-
+  console.log("successful response:", wordDefinition);
+  console.log("error message:", errorMessage);
   return (
     <>
       <h1>Search-A-Word!</h1>
-      <Search />
+      <Search
+        setWordDefinition={setWordDefinition}
+        setErrorMessage={setErrorMessage}
+      />
       <Results />
       <Footer />
     </>
