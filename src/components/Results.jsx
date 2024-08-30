@@ -22,36 +22,41 @@ function Results({ result }) {
           </div>
           <audio ref={audioRef} src={result.message.phonetics[0].audio}></audio>
         </div>
+        <hr className="main-section-divider" />
         <div className="result-body">
           {result.message.meanings.map((meaning, index) => {
             return (
-              <div key={index} className="meanings-card">
-                <p className="meanings-pos">{`Part of Speech: ${meaning.partOfSpeech}`}</p>
-                <ol>
-                  {meaning.definitions.map((definition, index) => {
-                    return (
-                      <li key={index}>
-                        {`Definition: ${definition.definition}`}
-                        <ul>
-                          {definition.example && (
-                            <li>{`Example: ${definition.example}`}</li>
-                          )}{" "}
-                          {!!meaning.synonyms.length && (
-                            <li>
-                              Synonyms
-                              <ol>
-                                {meaning.synonyms.map((synonym, index) => {
-                                  return <li key={index}>{synonym}</li>;
-                                })}
-                              </ol>
-                            </li>
-                          )}
-                        </ul>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
+              <>
+                <div key={index} className="meanings-card">
+                  <p className="meanings-pos">{`Part of Speech: ${meaning.partOfSpeech}`}</p>
+                  <ol>
+                    {meaning.definitions.map((definition, index) => {
+                      return (
+                        <li key={index}>
+                          {`Definition: ${definition.definition}`}
+                          <ul>
+                            {definition.example && (
+                              <li>{`Example: ${definition.example}`}</li>
+                            )}
+                          </ul>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                  {!!meaning.synonyms.length && (
+                    <>
+                      {" "}
+                      <p>Synonyms</p>
+                      <ol>
+                        {meaning.synonyms.map((synonym, index) => {
+                          return <li key={index}>{synonym}</li>;
+                        })}
+                      </ol>
+                    </>
+                  )}
+                </div>
+                <hr />
+              </>
             );
           })}
         </div>

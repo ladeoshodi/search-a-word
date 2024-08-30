@@ -1,0 +1,28 @@
+.result-header {
+  display: flex;
+  gap: 20px;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.result-audio:hover {
+  cursor: pointer;
+}
+
+.result-body {
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 10px; */
+  height: 100vh;
+  overflow: scroll;
+}
+
+.main-section-divider {
+  background-color: white;
+  height: 20px;
+  border-radius: 18px;
+}
+
+.meanings-pos {
+  font-size: 1.25rem;
+}

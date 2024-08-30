@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  background-color: #6a6dc3d1;
+  background-color: rgba(106, 109, 195, 0.82);
   color: #ffffff;
   height: 100vh;
   overflow: scroll;
