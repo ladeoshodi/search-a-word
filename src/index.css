@@ -13,6 +13,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  padding-top: 25px;
 }
 
 #root {
