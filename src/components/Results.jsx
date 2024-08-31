@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import "./Results.css";
+import loadingGif from "../assets/loading.gif";
 
 function Results({ result }) {
   const audioRef = useRef(null);
@@ -9,7 +10,11 @@ function Results({ result }) {
   }
 
   if (result.isNewRequest) {
-    return <div>Loading</div>;
+    return (
+      <div>
+        <img src={loadingGif} alt="Loading" />
+      </div>
+    );
   } else if (result.status === 404) {
     return <div className="error-message">{result.message}</div>;
   } else if (result.status === 200 && result.message) {
