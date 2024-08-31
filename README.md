@@ -2,7 +2,7 @@
 
 Search for any word using a free dictionary API
 
-[Visit live site](https://candid-vacherin-dbbe88.netlify.app/)
+[Visit live site](https://search-a-word.netlify.app/)
 ![Search A Word](./src/assets/search-a-word.png)
 
 ### Attributions
