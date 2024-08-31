@@ -12,6 +12,7 @@
   );
   -webkit-background-clip: text;
   color: transparent;
+  text-align: center;
 }
 .header-text::after {
   content: "⭐️";
