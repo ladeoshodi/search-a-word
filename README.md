@@ -3,7 +3,7 @@
 Search for any word using a free dictionary API
 
 [Visit live site](https://search-a-word.netlify.app/)
-![Search A Word](./src/assets/search-a-word.png)
+![Search A Word](./src/assets/search-a-word.gif)
 
 ### Attributions
 
